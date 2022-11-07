@@ -1,21 +1,16 @@
 
-
-function convertPokemonTypesToLi(pokemonTypes) {
-    return pokemonTypes.map((typeSlot) => `<li class="type">${typeSlot.type.name}</li>`)
-}
-
 function convertPokemonToLi(pokemon) {
     return `
-        <li class="pokemon">
+        <li class="pokemon ${pokemon.type}">
                 <span class="number">${'#'+pokemon.id.toString().padStart(3,'0')}</span>
                 <span class="name">${pokemon.name}</span>
 
                 <div class="detail">
                     <ol class="types">
-                        ${convertPokemonTypesToLi(pokemon.types).join('')}
+                        ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
                     </ol>
                     
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png" 
+                    <img src=${pokemon.image}
                     alt="${pokemon.name}">
                 </div>
         </li>

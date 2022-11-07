@@ -1,8 +1,31 @@
 
 const pokeAPI = {}
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+function convertPokeApiDetailToPokemon(pokeDetail) {
+    const pokemon = new Pokemon 
+    pokemon.name = capitalizeFirstLetter(pokeDetail.name)
+    pokemon.name[0] = pokemon.name[0].toUpperCase()
+    pokemon.id = pokeDetail.id
+
+    const types = pokeDetail.types.map((typeSlot) => capitalizeFirstLetter(typeSlot.type.name))
+    const [type] = types
+
+    pokemon.types = types
+    pokemon.type = type
+
+    pokemon.image = `"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png" `
+
+    return pokemon
+}
+
 pokeAPI.getPokemonDetail = (pokemon) => {
-    return fetch(pokemon.url).then((response) => response.json())
+    return fetch(pokemon.url)
+    .then((response) => response.json())
+    .then(convertPokeApiDetailToPokemon)
 }
 
 pokeAPI.getPokemons = (offset = 0, limit = 20) => {
