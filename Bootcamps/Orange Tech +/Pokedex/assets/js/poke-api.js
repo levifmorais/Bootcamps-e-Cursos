@@ -1,17 +1,12 @@
 
 const pokeAPI = {}
 
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
 function convertPokeApiDetailToPokemon(pokeDetail) {
     const pokemon = new Pokemon 
-    pokemon.name = capitalizeFirstLetter(pokeDetail.name)
-    pokemon.name[0] = pokemon.name[0].toUpperCase()
+    pokemon.name = pokeDetail.name
     pokemon.id = pokeDetail.id
-
-    const types = pokeDetail.types.map((typeSlot) => capitalizeFirstLetter(typeSlot.type.name))
+    
+    const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name)
     const [type] = types
 
     pokemon.types = types
