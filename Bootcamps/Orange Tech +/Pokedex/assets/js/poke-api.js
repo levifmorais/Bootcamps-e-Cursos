@@ -1,6 +1,8 @@
 
 const pokeAPI = {}
 
+let max_pokemon = 0;
+
 function convertPokeApiDetailToPokemon(pokeDetail) {
     const pokemon = new Pokemon 
     pokemon.name = pokeDetail.name
@@ -27,7 +29,9 @@ pokeAPI.getPokemons = (offset = 0, limit = 20) => {
     const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
     return fetch(url)
     .then((response) => response.json())
-    .then((jsonBody) => jsonBody.results)
+    .then((jsonBody) => {
+        max_pokemon = jsonBody.count
+        return jsonBody.results})
     .then((pokemons) => pokemons.map(pokeAPI.getPokemonDetail))
     .then((detailRequests) => Promise.all(detailRequests))
     .then((pokemonsDetails) => pokemonsDetails

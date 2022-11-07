@@ -33,6 +33,16 @@ function loadPokemonItems(offset, limit) {
 loadPokemonItems(offset, limit)
 
 loadMore.addEventListener('click', () => {
+    
     offset += limit
-    loadPokemonItems(offset, limit)
+    
+    nextPage = offset + limit
+
+    if(nextPage >= max_pokemon) {
+        loadPokemonItems(offset, (max_pokemon - offset))
+        loadMore.parentElement.removeChild(loadMore)
+     }
+    else{
+        loadPokemonItems(offset, limit)
+    }
 })
