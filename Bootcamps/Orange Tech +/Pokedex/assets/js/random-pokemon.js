@@ -1,9 +1,11 @@
 
+const resetBtn = document.getElementById('resetBtn')
+
 function loadPokemonItemsRandom(offset, limit) {
     
     function convertPokemonToLi(pokemon) {
         return `
-            <li class="pokemon ${pokemon.type}">
+            <li class="random-pokemon ${pokemon.type}">
                     <span class="number">${'#'+pokemon.id.toString().padStart(3,'0')}</span>
                     <span class="name">${pokemon.name}</span>
     
@@ -21,7 +23,7 @@ function loadPokemonItemsRandom(offset, limit) {
 
     pokeAPI.getPokemons(offset, limit).then((pokemons = []) => {
         listHTML = pokemons.map(convertPokemonToLi).join('')    
-        document.getElementById('body').innerHTML += listHTML
+        document.getElementById('pokemonRandomList').innerHTML += listHTML
     })
 }
 
@@ -35,3 +37,8 @@ function getPokemonsMax(){
     }
 
 getPokemonsMax()
+
+resetBtn.addEventListener('click', () => {
+    document.querySelector('.random-pokemon').remove()
+    getPokemonsMax()
+})

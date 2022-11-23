@@ -102,7 +102,6 @@
     color: white;
     padding: 0.3rem 1rem;
     margin: 0.3rem 0;
-    font-size: 0.625rem;
     border-radius: 1rem;
     filter: brightness(0.9);
     text-transform: capitalize;
@@ -129,7 +128,7 @@
     padding: 1rem;
 }
 
-.pagination button{
+.pagination .loadBtn{
     background-color: #6F35FC;
     background-repeat: no-repeat;
     background-position: center;
@@ -180,4 +179,16 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     
+}
+
+@media screen and (min-width: 1600px) {
+    
+    .pokemons{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    
+    .pokemon .detail img {
+        height: 140px;
+    }
+
 }

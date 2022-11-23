@@ -1,0 +1,127 @@
+
+html, body {width: auto!important; overflow: hidden!important} 
+
+.randomList {
+    padding: 0;
+}
+
+.random-pokemon {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+}
+
+.random-pokemon .number {
+    color: black;
+    opacity: 0.3;
+    text-align: right;
+    font-size: 1.5rem;
+}
+
+.random-pokemon .name {
+    color: white;
+    margin-bottom: 0.25rem;
+    text-transform: capitalize;
+    font-size: xx-large;
+}
+
+.random-pokemon .detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.random-pokemon .detail .types {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.random-pokemon .detail .types .type {
+    text-align: center;
+    color: white;
+    padding: 0.3rem 1rem;
+    margin: 1rem 0;
+    border-radius: 1rem;
+    filter: brightness(0.9);
+    text-transform: capitalize;
+    font-size: 1.2rem
+}
+
+.random-pokemon .detail img {
+    background-image: url(/assets/images/pokeball.svg);
+    background-position: 0.4rem;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    max-width: 100%;
+    height: 200px;
+    align-self: flex-end;
+    padding-left: 0.625rem;
+}
+
+.pagination #resetBtn{
+    background-color: #6F35FC;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(/assets/images/reset.svg);
+    background-size: 1.3rem;
+    border-radius: 70%;
+    height: 3rem;
+    width: 3rem;
+    border: none;
+    box-shadow: 0 0 10px #242328;
+    position: absolute;
+    bottom: 5%;
+} 
+
+@media screen and (max-width: 360px) {
+    
+    .random-pokemon .name {
+        font-size: x-large;
+    }
+
+    .random-pokemon .detail img {
+        height: 150px;
+    }
+}
+
+@media screen and (min-width: 500px ) {
+    .random-pokemon .name {
+        margin-left: 2rem;
+    }
+
+    .random-pokemon .detail .types {
+        margin-left: 2rem;
+    }
+}
+
+@media screen and (min-width: 1024px ) {
+    .random-pokemon .detail img {
+        height: 250px;
+    }
+
+    .random-pokemon .detail .types .type {
+        font-size: 1.4rem;
+    }
+
+}
+
+@media screen and (min-width: 1600px) {
+    
+    .random-pokemon .detail img {
+        height: 300px;
+    }
+
+    .random-pokemon .name {
+        font-size: xxx-large;
+    }
+
+    .random-pokemon .detail .types .type {
+        font-size: 1.8rem;
+    }
+
+}
+

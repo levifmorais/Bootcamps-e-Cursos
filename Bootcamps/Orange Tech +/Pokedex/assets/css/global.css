@@ -73,3 +73,13 @@ hr.rounded {
     }
     
 }
+
+@media screen and (min-width: 1440px) {
+    .content {
+        max-width: 1366px;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 1rem;
+    }
+    
+}
