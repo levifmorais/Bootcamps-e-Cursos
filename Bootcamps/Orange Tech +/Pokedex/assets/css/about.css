@@ -1,0 +1,23 @@
+
+#profile {
+    border-radius: 50%;
+    width: 25%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+#profile-text {
+    display: flex;
+    margin:auto;
+    justify-content: center;
+    color: #121212;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    #profile {
+        width: 45%;
+    }
+}

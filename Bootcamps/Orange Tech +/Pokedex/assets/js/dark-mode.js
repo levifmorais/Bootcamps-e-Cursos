@@ -40,7 +40,5 @@ toggleDarkMode.addEventListener('click', () => {
         darkModeOn = localStorage.getItem("isDarkModeOn");
     }
 
-    console.log(darkModeOn);
 })
 
-console.log(localStorage.getItem("isDarkModeOn"))

@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokédex | by levifmorais</title>
+    <title>About | by levifmorais</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico"/>
 
     <!-- Normalize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -19,15 +20,67 @@
 
     <!-- Nosso CSS -->
     <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/pokedex.css">
+    <link rel="stylesheet" href="/assets/css/about.css">
 </head>
 
-<body>
-    <h1>ABOUT!</h1>
+<body id="body" onload="checkDarkMode()">
+    <section class="content">
+        <h1>About</h1>
+        <nav>
+        <button id="toggleDarkMode" type="button" style="background: transparent; border:none; color:inherit; cursor:pointer;"><h3 id="switch">Dark Mode</h3></button>
+        <h3> / </h3>
+        <h3><a href="/index.html">Pokédex</a></h3>
+        <h3> / </h3>
+        <h3><a href="/assets/html/random.html">Random</a></h3>
+        </nav>
+        <hr class="rounded">
+        <img src="/assets/images/profile.png" alt="profile picture of levifmorais" id="profile">
+        <div id="profile-text">
+            <h4>Learning project made by Levi Ferreira (<a href="https://github.com/levifmorais" style="text-decoration: underline;">@levifmorais</a>).
+            <br><br><br><br>
+            Warnings:
+            <br><br>
+            Because of Pokémon variations per region or alternate styles, their ID don't necessarily correspond to the National Pokedéx number. 
+            <br><br>
+            Besides that, some Pokémon variations don't have official artwork so an alternate error image (MissingNo) will be shown.
+            <br><br><br><br>
+            <a href="https://github.com/levifmorais/DIO/tree/main/Bootcamps/Orange%20Tech%20%2B/Pokedex"><img src="/assets/images/github-icon.svg" alt="github icon" style="width: 30px; vertical-align: -0.5rem;">&nbsp;&nbsp;GitHub Repository</a></h4>
+        </div>
+
+    </section>
     <!-- Nosso JS -->
-    <script src="/assets/js/pokemon-model.js"></script>
-    <script src="/assets/js/poke-api.js"></script>
-    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/dark-mode.js"></script>
+    <script>
+        function darkMode() {
+            var body = document.body;
+            var h1 = document.getElementsByTagName("h1");
+            var h3 = document.getElementsByTagName("h3");
+            var h4 = document.getElementById("profile-text");
+            var content = document.getElementsByClassName("content");
+    
+            body.classList.toggle("dark-mode");
+            h4.firstElementChild.classList.toggle("dark-mode-text");
+
+            for (let i = 0; i < content.length; i++) {
+                content[i].classList.toggle("dark-mode");
+                h1[i].classList.toggle("dark-mode-text");
+            }
+    
+            for (let i = 0; i < h3.length; i++) {
+                h3[i].classList.toggle("dark-mode-text");
+            }
+        }
+    
+        function checkDarkMode(){
+        if (localStorage.getItem("isDarkModeOn") == true || localStorage.getItem("isDarkModeOn") == "true"){
+            darkMode()
+            document.getElementById("switch").innerText = "Light Mode";
+            }
+        else if (localStorage.getItem("isDarkModeOn") == false || localStorage.getItem("isDarkModeOn") == "false" ) {
+            document.getElementById("switch").innerText = "Dark Mode";
+            }
+        }
+        </script>
 </body>
 
 </html>

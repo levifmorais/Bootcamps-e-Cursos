@@ -17,7 +17,7 @@ function loadPokemonItems(offset, limit) {
                             ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
                         </ol>
                         
-                        <img src=${pokemon.image}
+                        <img src=${pokemon.image} onerror="this.onerror=null; this.src='/assets/images/missingno.png'"
                         alt="${pokemon.name}">
                     </div>
             </li>
