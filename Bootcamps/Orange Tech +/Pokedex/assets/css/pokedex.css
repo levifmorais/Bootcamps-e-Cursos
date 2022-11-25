@@ -149,6 +149,12 @@
     box-shadow: 0 0 30px rgb(102, 0, 255);
 }
 
+@media screen and (max-width: 390px) {
+.pokemon .detail .types .type {
+    padding: 0.3rem 0.8rem;
+}
+}
+
 @media screen and (min-width: 380px) {
     .pokemons{
         grid-template-columns: 1fr 1fr;

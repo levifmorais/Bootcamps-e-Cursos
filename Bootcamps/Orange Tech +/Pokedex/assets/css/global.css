@@ -9,10 +9,6 @@ html, body {width: auto!important; overflow-x: hidden!important}
     background-color: #f6f8fc; 
 } 
 
-nav {
-    margin-right: 1.2rem;
-}
-
 a {
     color: inherit;
     text-decoration: none;
@@ -33,6 +29,9 @@ h3 {
 
 hr.rounded {
     border-top: 2px solid #6F35FC;
+    border-bottom: solid #6F35FC;
+    border-right: solid  #6F35FC;
+    border-left: solid #6F35FC;
     border-radius: 10px;
   }
 
@@ -43,6 +42,18 @@ hr.rounded {
     width: 100vw;
 }
 
+#toggleDarkMode{
+    padding: 0;
+}
+
+.dark-mode {
+    background-color: #121212;
+}
+
+.dark-mode-text{
+    color: #f6f8fc;
+}
+
 @media screen and (min-width: 390px) {
     nav {
         float: right;
@@ -50,6 +61,12 @@ hr.rounded {
     }
     h3 {
         font-size: medium;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    nav {
+        margin-right: 1.2rem;
     }
 }
 
