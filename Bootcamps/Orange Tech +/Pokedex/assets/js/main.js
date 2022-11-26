@@ -1,6 +1,8 @@
 
 const pokemonList = document.getElementById('pokemonList')
 const loadMore = document.getElementById('loadMore')
+const toTop = document.getElementById('toTop');
+const toBottom = document.getElementById('toBottom');
 const limit = 50
 let offset = 0;
 
@@ -46,3 +48,26 @@ loadMore.addEventListener('click', () => {
         loadPokemonItems(offset, limit)
     }
 })
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+function bottomFunction() {
+    loadMore.scrollIntoView({block: "center"});
+}
+
+function scrollFunction() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+      toTop.style.display = "inline-block"
+    } else {
+      toTop.style.display = "none";
+    }
+
+    if (Math.ceil(document.body.scrollHeight - document.body.scrollTop) === document.body.clientHeight) {
+        toBottom.style.display = "none";
+      } else {
+        toBottom.style.display = "inline-block"
+      }
+  }

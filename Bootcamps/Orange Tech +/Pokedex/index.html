@@ -43,6 +43,10 @@
             </button>
         </div>
         
+        <div class="buttonOverlay">
+        <button onclick="topFunction()" id="toTop"></button>
+        <button onclick="bottomFunction()" id="toBottom"></button>
+        </div>
     </section>
 
 
@@ -79,6 +83,12 @@
         document.getElementById("switch").innerText = "Dark Mode";
         }
     }
+
+    document.body.addEventListener('scroll', (e) => {
+        scrollFunction()
+    });
+
+    //window.onscroll = function() {scrollFunction()};
     </script>
 </body>
 

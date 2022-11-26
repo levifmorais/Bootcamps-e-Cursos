@@ -119,6 +119,10 @@
     padding-left: 0.625rem;
 }
 
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .pagination {
     display: flex;
     flex-direction: row;
@@ -138,14 +142,52 @@
     width: 3rem;
     border: none;
     box-shadow: 0 0 10px #242328;
+    cursor: pointer;
 } 
 
 .pagination button:hover{
     box-shadow: 0 0 15px rgb(79, 24, 161);
-    cursor: pointer;
 }
 
 .pagination button:active {
+    box-shadow: 0 0 30px rgb(102, 0, 255);
+}
+
+.buttonOverlay {
+    position: fixed;
+    margin-bottom: 0.8rem;
+    bottom: 0%;
+    right: 5%;
+}
+
+.buttonOverlay button {
+    cursor: pointer;
+    background-color: #6F35FC;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2.8rem;
+    border-radius: 70%;
+    height: 3rem;
+    width: 3rem;
+    border: none;
+    box-shadow: 0 0 10px #242328;
+}
+
+#toTop {
+    display: none;
+    background-image: url(/assets/images/arrow-up.svg);
+}
+
+#toBottom {
+    background-image: url(/assets/images/arrow-down.svg);
+}
+
+.buttonOverlay button:hover{
+    box-shadow: 0 0 15px rgb(79, 24, 161);
+    cursor: pointer;
+}
+
+.buttonOverlay button:active {
     box-shadow: 0 0 30px rgb(102, 0, 255);
 }
 
@@ -185,6 +227,9 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     
+    #toTop {
+        display: inline-block;
+    }
 }
 
 @media screen and (min-width: 1600px) {
