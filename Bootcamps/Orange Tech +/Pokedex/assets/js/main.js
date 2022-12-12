@@ -44,13 +44,15 @@ function loadPokemonItems(offset, limit) {
                             </ol>
                         </div>
                         <div class="imgModal">
-                            <img src=${pokemon.image} onerror="this.onerror=null; this.src='/assets/images/missingno.png'"
+                            <img src="/assets/images/pokeball.svg" alt="pokeball" class="pokeballModal">
+                            <img class="pokemonImageModal" src=${pokemon.image} onerror="this.onerror=null; this.src='/assets/images/missingno.png'"
                             alt="${pokemon.name}">
                         </div>
                     </div>
                     <div class="subModal">
                         <h2 style="margin-bottom: 1rem; font-size:2.5vmax;">About</h2>
                         <hr class="pad">
+                        <span class="informationModal flavorText">${pokemon.flavor_text}</span>
                         <div class="descriptionDIV">
                             <span class="descriptionModal">Height</span>
                             <span class="informationModal">${pokemon.height} m</span>

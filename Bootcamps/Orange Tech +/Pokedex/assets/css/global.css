@@ -103,8 +103,15 @@ hr.rounded {
     justify-content: center;
 }
 
-.imgModal img{
+.pokemonImageModal {
     height: 40vmin;
+    z-index: 1;
+}
+
+.pokeballModal {
+    position: absolute;
+    z-index: 0;
+    height: 90vmin;
 }
 
 .modalTypes{
@@ -135,6 +142,7 @@ hr.rounded {
     color: #121212;
     padding:1.2rem;
     font-size: 4vmin;
+    z-index: 1;
 }
 
 .pad {
@@ -144,7 +152,7 @@ hr.rounded {
     border-left: solid #6F35FC;
     border-radius: 10px;
     margin-top: 0;
-    margin-bottom: 2rem
+    margin-bottom: 1.5rem
 }
 
 .descriptionModal {
@@ -169,6 +177,12 @@ hr.rounded {
 
 .subModal h2 {
     padding-left: 2%;
+    z-index: 1;
+}
+
+.flavorText {
+    font-size: 1.8vmax;
+    margin-bottom: 2vmax;
 }
 
 .close {

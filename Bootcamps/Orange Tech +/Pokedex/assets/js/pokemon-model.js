@@ -16,5 +16,7 @@ class Pokemon {
     gender_rate;
     generation;
     pokedex_numbers = [];
+    flavor_text_entries = [];
+    flavor_text;
     nationalDex;
 }

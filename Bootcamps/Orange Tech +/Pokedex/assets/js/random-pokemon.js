@@ -30,7 +30,7 @@ function loadPokemonItemsRandom(offset, limit) {
                         <button class="close" onclick="document.querySelector('.${pokemon.name}Modal').style.display='none';"></button>
                         <div style="position: relative;">
                             <span style="opacity: 0.7; font-size:2vmax"><i>Generation ${pokemon.generation}</i></span><br>
-                            <span class="modalName">${pokemon.name.replace('-', ' ')}</span>
+                            <span class="modalName">${pokemon.name}</span>
                             <span class="modalNumber">${'#'+pokemon.nationalDex.toString().padStart(3,'0')}</span>
                         </div>
                         <div>
@@ -39,13 +39,15 @@ function loadPokemonItemsRandom(offset, limit) {
                             </ol>
                         </div>
                         <div class="imgModal">
-                            <img src=${pokemon.image} onerror="this.onerror=null; this.src='/assets/images/missingno.png'"
+                            <img src="/assets/images/pokeball.svg" alt="pokeball" class="pokeballModal">
+                            <img class="pokemonImageModal" src=${pokemon.image} onerror="this.onerror=null; this.src='/assets/images/missingno.png'"
                             alt="${pokemon.name}">
                         </div>
                     </div>
                     <div class="subModal">
                         <h2 style="margin-bottom: 1rem; font-size:2.5vmax;">About</h2>
                         <hr class="pad">
+                        <span class="informationModal flavorText">${pokemon.flavor_text}</span>
                         <div class="descriptionDIV">
                             <span class="descriptionModal">Height</span>
                             <span class="informationModal">${pokemon.height} m</span>

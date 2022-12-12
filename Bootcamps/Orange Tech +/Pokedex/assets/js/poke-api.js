@@ -80,6 +80,18 @@ async function convertPokeApiDetailToPokemon(pokeDetail) {
     pokemon.generation = pokemon.generation.replace(/generation-/, "");
     pokemon.generation = pokemon.generation.toUpperCase();
 
+    pokemonSpecies.getFlavorText = () => {
+        return fetch(urlSpecies)
+        .then((response) => response.json())
+        .then((jsonBody) => jsonBody.flavor_text_entries.filter((flavor) => flavor.language.name === "en"))
+    }
+
+    pokemon.flavor_text_entries = await pokemonSpecies.getFlavorText();
+    pokemon.flavor_text = pokemon.flavor_text_entries[0].flavor_text;
+    pokemon.flavor_text = pokemon.flavor_text.replace(/[^a-zA-ZÀ-ÿ0-9.,!?’']/g, ' ');
+    pokemon.flavor_text = pokemon.flavor_text.replace("POKéMON", "Pokémon");
+    pokemon.flavor_text = pokemon.flavor_text.replace("POKé BALL", "Poké Ball");
+    
     return pokemon
 }
 
