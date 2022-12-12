@@ -5,21 +5,16 @@ class Pokemon {
     type;
     types = [];
     image;
+    sprite;
     max;
     weight;
     height;
     ability;
     abilities = [];
-    url;
-    species = [];
-}
-
-class PokemonSpecies {
-    egg_group;
+    species;
     egg_groups = [];
     gender_rate;
     generation;
     pokedex_numbers = [];
-    entry_number;
-    base_happines;
+    nationalDex;
 }

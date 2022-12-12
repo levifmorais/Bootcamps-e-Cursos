@@ -3,6 +3,7 @@ html, body {width: auto!important; overflow: hidden!important}
 
 .randomList {
     padding: 0;
+    display: grid;
 }
 
 .random-pokemon {

@@ -58,57 +58,6 @@ hr.rounded {
     color: #f6f8fc;
 }
 
-@media screen and (min-width: 390px) {
-    nav {
-        float: right;
-        margin-top: 4rem
-    }
-    h3 {
-        font-size: medium;
-    }
-}
-
-@media screen and (min-width: 400px) {
-    nav {
-        margin-right: 1.2rem;
-    }
-}
-
-@media screen and (min-width: 576px) {
-    nav{
-        margin-top: initial;
-    }
-
-    h3 {
-        display: inline-block;
-        font-size: larger;
-    }
-
-    h4 {
-        font-size: larger;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .content {
-        max-width: 992px;
-        height: auto;
-        margin: 1rem auto;
-        border-radius: 1rem;
-    }
-    
-}
-
-@media screen and (min-width: 1440px) {
-    .content {
-        max-width: 1366px;
-        height: auto;
-        margin: 1rem auto;
-        border-radius: 1rem;
-    }
-    
-}
-
 .modal {
   display: none;
   position: fixed; 
@@ -125,10 +74,10 @@ hr.rounded {
 .modalContent {
     display: flex;
     flex-direction: column;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
     margin-top: 5%;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 95%;
     border-radius: 1rem;
     padding:0;
 }
@@ -138,7 +87,7 @@ hr.rounded {
 }
 
 .modalName {
-    font-size: 1.8rem;
+    font-size: 4vmax;
     text-transform: capitalize;
 }
 
@@ -146,6 +95,7 @@ hr.rounded {
     position: absolute;
     bottom: 0;
     right: 0;
+    font-size: 1.2rem;
 }
 
 .imgModal {
@@ -184,6 +134,41 @@ hr.rounded {
     flex: 0 1 auto;
     color: #121212;
     padding:1.2rem;
+    font-size: 4vmin;
+}
+
+.pad {
+    border-top: 1px solid #6F35FC;
+    border-bottom: solid #6F35FC;
+    border-right: solid #6F35FC;
+    border-left: solid #6F35FC;
+    border-radius: 10px;
+    margin-top: 0;
+    margin-bottom: 2rem
+}
+
+.descriptionModal {
+    color: #686868;
+    width: 35%;
+}
+
+.informationModal{
+    display:flex;
+    width: fit-content;
+    text-align: left;
+}
+
+.descriptionDIV {
+    display: flex;
+    margin: 0 0 1.5rem 0;
+    font-size: 1.5vmax;
+}
+.descriptionDIV img {
+    height: 2vmax;
+}
+
+.subModal h2 {
+    padding-left: 2%;
 }
 
 .close {
@@ -206,4 +191,69 @@ hr.rounded {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media screen and (min-width: 390px) {
+    nav {
+        float: right;
+        margin-top: 4rem
+    }
+    h3 {
+        font-size: medium;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    nav {
+        margin-right: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    nav{
+        margin-top: initial;
+    }
+
+    h3 {
+        display: inline-block;
+        font-size: larger;
+    }
+
+    h4 {
+        font-size: larger;
+    }
+
+    .modalContent {
+        width: 80%;
+    }
+
+    .modalNumber {
+        position: static;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .content {
+        max-width: 992px;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 1rem;
+    }
+    
+    .modalContent {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .content {
+        max-width: 1366px;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 1rem;
+    }
+    
+    .modalContent {
+        width: 50%;
+    }
 }

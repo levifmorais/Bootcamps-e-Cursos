@@ -14,8 +14,8 @@ function loadPokemonItems(offset, limit) {
 
             <button id="pokemonBtn" onclick="document.querySelector('.${pokemon.name}Modal').style.display='block';" style="all:unset; cursor:pointer;">
             <li class="pokemon ${pokemon.type}">
-                    <span class="number">${'#'+pokemon.id.toString().padStart(3,'0')}</span>
-                    <span class="name">${pokemon.name}</span>
+                    <span class="number">${'#'+pokemon.nationalDex.toString().padStart(3,'0')}</span>
+                    <span class="name">${pokemon.name.replace('-', ' ')}</span>
     
                     <div class="detail">
                         <ol class="types">
@@ -34,8 +34,9 @@ function loadPokemonItems(offset, limit) {
                     <div class="topModal">
                         <button class="close" onclick="document.querySelector('.${pokemon.name}Modal').style.display='none';"></button>
                         <div style="position: relative;">
+                            <span style="opacity: 0.7; font-size:2vmax"><i>Generation ${pokemon.generation}</i></span><br>
                             <span class="modalName">${pokemon.name}</span>
-                            <span class="modalNumber">${'#'+pokemon.id.toString().padStart(3,'0')}</span>
+                            <span class="modalNumber">${'#'+pokemon.nationalDex.toString().padStart(3,'0')}</span>
                         </div>
                         <div>
                             <ol class="modalTypes">
@@ -48,9 +49,35 @@ function loadPokemonItems(offset, limit) {
                         </div>
                     </div>
                     <div class="subModal">
-                        ${pokemon.abilities.map((ability) => `<li class="${ability}">${ability}</li>`).join('')}
-                        <p>${pokemon.weight} kg</p>
-                        <p>${pokemon.height} m</p>
+                        <h2 style="margin-bottom: 1rem; font-size:2.5vmax;">About</h2>
+                        <hr class="pad">
+                        <div class="descriptionDIV">
+                            <span class="descriptionModal">Height</span>
+                            <span class="informationModal">${pokemon.height} m</span>
+                            <span/>
+                        </div>
+                        <div class="descriptionDIV">
+                            <span class="descriptionModal">Weight</span>
+                            <span class="informationModal">${pokemon.weight} kg</span>
+                            <span/>
+                        </div>
+                        <div class="descriptionDIV" style="text-transform: capitalize;">
+                            <span class="descriptionModal">Abilities</span>
+                            <span class="informationModal">${pokemon.abilities.map((ability) => `<span>${ability}</span>`).join(',&nbsp;')}</span>
+                            <span/>
+                        </div>
+                        <h2 style="margin-bottom: 1rem; font-size:2.5vmax;">Breeding</h2>
+                        <hr class="pad">
+                        <div class="descriptionDIV">
+                            <span class="descriptionModal">Gender</span>
+                            <span class="informationModal">${pokemon.gender_rate}</span>
+                            <span/>
+                        </div>
+                        <div class="descriptionDIV">
+                            <span class="descriptionModal">Egg Groups</span>
+                            <span class="informationModal" style="text-transform: capitalize;">${pokemon.egg_groups}</span>
+                            <span/>
+                        </div>
                     </div>
                 </div>
 
@@ -104,3 +131,4 @@ function scrollFunction() {
         toBottom.style.display = "inline-block"
       }
   }
+
