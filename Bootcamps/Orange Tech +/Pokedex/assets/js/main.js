@@ -22,7 +22,7 @@ function loadPokemonItems(offset, limit) {
                             ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
                         </ol>
                         
-                        <img src=${pokemon.image} onerror="this.onerror=null; this.src='/assets/images/missingno.png'"
+                        <img src=${pokemon.image} onerror="this.onerror=null; this.src='assets/images/missingno.png'"
                         alt="${pokemon.name}">
                     </div>
             </li>
@@ -44,8 +44,8 @@ function loadPokemonItems(offset, limit) {
                             </ol>
                         </div>
                         <div class="imgModal">
-                            <img src="/assets/images/pokeball.svg" alt="pokeball" class="pokeballModal">
-                            <img class="pokemonImageModal" src=${pokemon.image} onerror="this.onerror=null; this.src='/assets/images/missingno.png'"
+                            <img src="assets/images/pokeball.svg" alt="pokeball" class="pokeballModal">
+                            <img class="pokemonImageModal" src=${pokemon.image} onerror="this.onerror=null; this.src='assets/images/missingno.png'"
                             alt="${pokemon.name}">
                         </div>
                     </div>

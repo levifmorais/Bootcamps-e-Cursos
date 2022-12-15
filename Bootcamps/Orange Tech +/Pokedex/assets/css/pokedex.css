@@ -109,7 +109,7 @@
 }
 
 .pokemon .detail img {
-    background-image: url(/assets/images/pokeball.svg);
+    background-image: url(../images/pokeball.svg);
     background-position: 0.4rem;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -136,7 +136,7 @@ button {
     background-color: #6F35FC;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(/assets/images/plus.svg);
+    background-image: url(../images/plus.svg);
     border-radius: 70%;
     height: 3rem;
     width: 3rem;
@@ -175,11 +175,11 @@ button {
 
 #toTop {
     display: none;
-    background-image: url(/assets/images/arrow-up.svg);
+    background-image: url(../images/arrow-up.svg);
 }
 
 #toBottom {
-    background-image: url(/assets/images/arrow-down.svg);
+    background-image: url(../images/arrow-down.svg);
 }
 
 .buttonOverlay button:hover{

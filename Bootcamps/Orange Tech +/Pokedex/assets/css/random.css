@@ -53,7 +53,7 @@ html, body {width: auto!important; overflow: hidden!important}
 }
 
 .random-pokemon .detail img {
-    background-image: url(/assets/images/pokeball.svg);
+    background-image: url(../images/pokeball.svg);
     background-position: 0.4rem;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -67,7 +67,7 @@ html, body {width: auto!important; overflow: hidden!important}
     background-color: #6F35FC;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(/assets/images/reset.svg);
+    background-image: url(../images/reset.svg);
     background-size: 1.3rem;
     border-radius: 70%;
     height: 3rem;
@@ -94,7 +94,7 @@ html, body {width: auto!important; overflow: hidden!important}
     }
 
     .random-pokemon .detail img {
-        height: 160px;
+        height: 150px;
     }
 }
 

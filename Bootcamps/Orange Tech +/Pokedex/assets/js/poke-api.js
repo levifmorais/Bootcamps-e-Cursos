@@ -65,8 +65,8 @@ async function convertPokeApiDetailToPokemon(pokeDetail) {
         let eights = pokemon.gender_rate / 8 * 100
         let male_rate = 100 - eights;
         let female_rate = eights;
-        pokemon.gender_rate = ["<img src='/assets/images/mars.svg'/>&nbsp;"+male_rate+"%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
-        "<img src='/assets/images/venus.svg'/>&nbsp;"+female_rate+"%"]
+        pokemon.gender_rate = [`<img src='../images/mars.svg' onerror="this.onerror=null; this.src='assets/images/mars.svg'"/>&nbsp;`+male_rate+"%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+        `<img src='../images/venus.svg' onerror="this.onerror=null; this.src='assets/images/venus.svg'"/>&nbsp;`+female_rate+"%"]
         pokemon.gender_rate = pokemon.gender_rate.join("  ")
     }
 
