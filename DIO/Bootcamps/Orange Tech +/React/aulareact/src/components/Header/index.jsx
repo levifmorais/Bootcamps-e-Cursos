@@ -13,22 +13,32 @@ import {
     Logo
 } from './styles'
 
-const Header = () => {
+const Header = ({Auth}) => {
   return (
     <Wrapper>
         <HeaderContainer>
             <Row>
                 <Logo src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/r0rx7o4jm6jy2uvzt7xk" alt="Logo" />
-                <BuscarInputContainer>
-                    <Input type="text" placeholder="Buscar"></Input>
-                </BuscarInputContainer>
-                <Menu>Live Code</Menu>
-                <Menu>Global</Menu>
+                {Auth ? (
+                    <>
+                        <BuscarInputContainer>
+                            <Input type="text" placeholder="Buscar"></Input>
+                        </BuscarInputContainer>
+                        <Menu>Live Code</Menu>
+                        <Menu>Global</Menu>
+                    </>
+                ) : null}
             </Row>
             <Row>
-                <MenuRight href="#">Home</MenuRight>
-                <Button title="Entrar"></Button>
-                <Button title="Cadastrar"></Button>
+                {Auth ? (
+                    <UserPicture src='https://avatars.githubusercontent.com/u/102878183?v=4'/>
+                ) : (
+                <>
+                    <MenuRight href='/'>Home</MenuRight>
+                    <Button title="Entrar"></Button>
+                    <Button title="Cadastrar"></Button>
+                </>
+                )}
             </Row>
         </HeaderContainer>
     </Wrapper>
