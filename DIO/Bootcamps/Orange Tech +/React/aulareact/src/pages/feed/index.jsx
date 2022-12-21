@@ -9,7 +9,8 @@ import {
   Container,
   Title,
   TitleHighlight,
-  Column
+  Column,
+  ColumnWrapper
 } from './styles';
 
 const FEED = () => {
@@ -25,14 +26,16 @@ const FEED = () => {
           <Card></Card>
           <Card></Card>
         </Column>
-        <Column flex={1}>
-          <TitleHighlight># TOP 5 DA SEMANA</TitleHighlight>
-          <UserInfo percentual={80} name="Levi Ferreira" image="https://avatars.githubusercontent.com/u/102878183?v=4"/>
-          <UserInfo percentual={65} name="Levi Ferreira" image="https://avatars.githubusercontent.com/u/102878183?v=4"/>
-          <UserInfo percentual={60} name="Levi Ferreira" image="https://avatars.githubusercontent.com/u/102878183?v=4"/>
-          <UserInfo percentual={40} name="Levi Ferreira" image="https://avatars.githubusercontent.com/u/102878183?v=4"/>
-          <UserInfo percentual={20} name="Levi Ferreira" image="https://avatars.githubusercontent.com/u/102878183?v=4"/>
-        </Column>
+        <ColumnWrapper>
+          <Column flex={1}>
+            <TitleHighlight># RANKING TOP 5 DA SEMANA</TitleHighlight>
+            <UserInfo percentual={80} name="Levi Ferreira" image="https://avatars.githubusercontent.com/u/102878183?v=4"/>
+            <UserInfo percentual={65} name="Levi Ferreira" image="https://avatars.githubusercontent.com/u/102878183?v=4"/>
+            <UserInfo percentual={60} name="Levi Ferreira" image="https://avatars.githubusercontent.com/u/102878183?v=4"/>
+            <UserInfo percentual={40} name="Levi Ferreira" image="https://avatars.githubusercontent.com/u/102878183?v=4"/>
+            <UserInfo percentual={20} name="Levi Ferreira" image="https://avatars.githubusercontent.com/u/102878183?v=4"/>
+          </Column>
+        </ColumnWrapper>
       </Container>
     </div>
   );

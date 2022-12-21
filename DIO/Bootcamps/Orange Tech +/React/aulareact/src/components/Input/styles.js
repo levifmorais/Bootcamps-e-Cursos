@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const InputContainer = styled.div`
-    max-width: 275px;
     width: 100%;
     height: 30px;
     border-bottom: 1px solid #3B3450;
+    background-color: transparent;
 
     display: flex;
     align-items: center;
@@ -24,7 +24,8 @@ export const InputText = styled.input`
 `
 export const ErrorText = styled.p`
     color: #FF0000;
-    font-size: 12px;
+    font-style: bold;
+    font-size: 15px;
     margin-top: 5px 0;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 `

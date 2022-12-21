@@ -38,7 +38,7 @@ export const BuscarInputContainer = styled.div`
     background-color: #2D2D37;
     border-radius: 8px;
     padding: 2px 5px;
-    margin: 0 12px;
+    margin: 0 30px;
 
     display: flex;
     align-items: center;
@@ -51,7 +51,7 @@ export const Menu = styled.a`
     font-size: 16px;
     line-height: 25px;
     color: #ffffff;
-    margin-right: 50px;
+    margin-right: 20px;
     text-decoration: none;
     white-space: nowrap;
 `
@@ -72,6 +72,7 @@ export const UserPicture = styled.img`
     height: 32px;
     border-radius: 22px;
     border: 2px solid #fff;
+    margin-right: 8px;
 `
 
 export const Input = styled.input`
@@ -82,5 +83,17 @@ export const Input = styled.input`
 `
 
 export const Logo = styled.img`
-    width: 80px;
+    width: 75px;
+    align-self: center;
+`
+export const LogoClick = styled.a`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+export const IconContainer = styled.div`
+    opacity: 0.5;
+    margin-right: 5px;
+    margin-left: 8px;
+    margin-top: 5px;
 `

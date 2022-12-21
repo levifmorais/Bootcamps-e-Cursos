@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.main`
     width: 100%;
     max-width: 80%;
     margin: 0 auto;
-    margin-top: 120px;
+    margin-top: 70px;
 
     display: flex;
     flex-direction: row;
@@ -13,7 +13,7 @@ export const Container = styled.main`
 `
 
 export const Wrapper = styled.div`
-    max-width: 300px;
+    max-width: 320px;
 `
 
 export const Column = styled.div`
@@ -23,9 +23,7 @@ export const Column = styled.div`
 export const Row = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 50px;
+    margin-top: 15px;
 `
 
 export const Title = styled.h2`
@@ -33,7 +31,7 @@ export const Title = styled.h2`
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
-    width: 600px;
+    width: 550px;
     margin-bottom: 20px;
     line-height: 44px;
     color: #ffffff;
@@ -56,17 +54,28 @@ export const SubtitleLogin = styled.p`
     margin-bottom: 35px;
     line-height: 25px;
 `
-export const ForgetText = styled.p`
+export const SubformLogin = styled.p`
     font-family: 'Open sans', sans-serif;
     font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    margin-top: 35px;
+    text-align: left;
+`
+
+export const ForgetText = styled.p`
+    font-family: 'Open sans', sans-serif;
+    font-style: bold;
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
 
-    color: #E5E044;
+    color: #FFFFFF; 
+    margin-right: 5px;
 `
 
-export const CreateText = styled.p`
+export const LoginText = styled.p`
     font-family: 'Open sans', sans-serif;
     font-style: normal;
     font-weight: 700;

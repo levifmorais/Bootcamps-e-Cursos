@@ -6,7 +6,9 @@ import {
   Container,
   Title,
   TitleHighlight,
-  TextContent
+  TextContent,
+  Wrapper,
+  ButtonWrapper
 } from './styles';
 
 const HOME = () => {
@@ -21,7 +23,7 @@ const HOME = () => {
     <div>
       <Header />
       <Container>
-        <div>
+        <Wrapper>
           <Title>
             <TitleHighlight>
               Implemente
@@ -33,8 +35,10 @@ const HOME = () => {
             Domine as tecnologias utilizadas pelas empresas mais inovadoras do mundo
             e encare seu novo desafio profissional, evoluindo em comunidade com os melhores experts.
           </TextContent>
-          <Button title="Começar Agora" variant='secondary' onClick={handleClickSignIn}></Button>
-        </div>
+          <ButtonWrapper>
+            <Button title="Começar Agora" variant='secondary' onClick={handleClickSignIn}></Button>
+          </ButtonWrapper>
+        </Wrapper>
         <div>
           <img src="https://hermes.digitalinnovation.one/public/components/pages/home/how-it-works/emerging-technologies.png" alt="Banner"/>
         </div>

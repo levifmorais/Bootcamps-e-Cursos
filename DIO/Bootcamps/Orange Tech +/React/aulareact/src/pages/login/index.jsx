@@ -4,8 +4,7 @@ import Button from '../../components/Button';
 import Header from '../../components/Header';
 import {Input} from '../../components/Input';
 
-import { AiFillLock } from 'react-icons/ai';
-import { BsFillPersonFill } from 'react-icons/bs';
+import { AiFillLock, AiFillMail } from 'react-icons/ai';
 
 import {useForm} from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -30,7 +29,6 @@ const LOGIN = () => {
   const onSubmit =  async formData => {
     try{
       const { data } = await api.get(`/users?email=${formData.email}&password=${formData.password}`);
-      console.log("data: ",data," data.length: ",data.length)
       if (data.length > 0) {
         navigate('/feed');
       } else {
@@ -43,8 +41,6 @@ const LOGIN = () => {
 
   };
 
-  console.log('eh valido:',isValid,'erro:', errors)
-
   return (
     <div>
       <Header />
@@ -55,18 +51,18 @@ const LOGIN = () => {
             e entrar mais rápido nas empresas mais desejadas.
           </Title>
         </Column>
-        <Column>
+        <Column flex={0.8}>
           <Wrapper>
             <TitleLogin>Faça seu cadastro</TitleLogin>
             <SubtitleLogin>Faça seu login e make the change._</SubtitleLogin>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <Input name="email" errorMessage={errors?.email?.message} control={control} placeholder="Digite seu email" leftIcon={<BsFillPersonFill/>}/>
-              <Input name="password" errorMessage={errors?.password?.message} control={control} placeholder="Digite sua senha" type="password" leftIcon={<AiFillLock/>}/>
+              <Input name="email" errorMessage={errors?.email?.message} control={control} placeholder="E-mail" leftIcon={<AiFillMail style={{color: '#8647AD'}}/>}/>
+              <Input name="password" errorMessage={errors?.password?.message} control={control} placeholder="Senha" type="password" leftIcon={<AiFillLock style={{color: '#8647AD'}}/>}/>
               <Button title="Entrar" variant="secondary" onClick={() => null} type="submit"/>
             </form>
             <Row>
-              <ForgetText>Esqueci minha senha</ForgetText>
-              <CreateText>Criar conta</CreateText>
+              <a href='/register' style={{textDecoration: 'none'}}><ForgetText>Esqueci minha senha</ForgetText></a>
+              <a href='/register' style={{textDecoration: 'none'}}><CreateText>Criar conta</CreateText></a>
             </Row>
           </Wrapper>
         </Column>
