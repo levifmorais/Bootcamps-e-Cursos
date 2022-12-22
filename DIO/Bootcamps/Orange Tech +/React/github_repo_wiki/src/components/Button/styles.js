@@ -12,7 +12,7 @@ export const ButtonContainer = styled.div`
     justify-content: center;
     align-items: center;
 
-    height: 65px;
+    height: 50px;
     width: 80%;
 
     margin: 20px;

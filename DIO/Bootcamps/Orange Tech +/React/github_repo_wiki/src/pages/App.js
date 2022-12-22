@@ -42,10 +42,12 @@ function App() {
 
   return (
     <Container>
+      <div>
       <BsGithub size={90}/>
+      </div>
       <Input value={currentRepo} onChange={(e) => setCurrentRepo(e.target.value)}/>
       <Button onClick={handleSearchRepo}/>
-      {repos.map(repo => <ItemRepo repo={repo} removeFunction={handleRemoveRepo(repo.id)}/>)}
+      {repos.map(repo => <ItemRepo repo={repo} onRemove={handleRemoveRepo}/>)}
     </Container>
   );
 }
